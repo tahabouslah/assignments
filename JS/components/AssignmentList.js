@@ -3,9 +3,9 @@ export default {
     components : {Assignment},
     template: `
         <section v-show="status.length">
-            <h2>{{title}}</h2>
+            <h2 class="font-bold mb-2 ">{{title}}</h2>
             
-                <ul>
+                <ul class="border border-gray-600 divide-y divide-gary-600">
                     <assignment
                         v-for = "a in status"
                         :key = "a.id"
