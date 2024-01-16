@@ -1,38 +1,9 @@
+import AssignmentList from "./AssignmentList.js"
 export default {
+    components : {AssignmentList},
     template : `
-        <section v-show="filters.inProgress.length">
-            <h2>In progress</h2>
-            
-                <ul>
-                        <li
-                            v-for = "a in filters.inProgress"
-                            :key = "a.id"
-                        >
-                            <label>
-                                {{a.name}}  
-                                <input type="checkbox" v-model=" a.complete">
-                            </label>
-                        </li> 
-                </ul>
-            
-        </section>
-
-        <section v-show="filters.completed.length">
-            <h2>Completed</h2>
-            
-                <ul>
-                        <li
-                            v-for = "a in filters.completed"
-                            :key = "a.id"
-                        >
-                            <label>
-                                {{a.name}}  
-                                <input type="checkbox" v-model=" a.complete">
-                            </label>
-                        </li> 
-                </ul>
-            
-        </section>
+        <assignmentList title="In progress" :status="filters.inProgress"></assignmentList>
+        <assignmentList title="Completed" :status="filters.completed"></assignmentList>
     `,
 
     data() {
