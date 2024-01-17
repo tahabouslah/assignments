@@ -2,8 +2,18 @@ import AssignmentList from "./AssignmentList.js"
 export default {
     components : {AssignmentList},
     template : `
-        <assignmentList title="In progress" :status="filters.inProgress"></assignmentList>
-        <assignmentList title="Completed" :status="filters.completed"></assignmentList>
+        <section class="space-y-6">
+            <assignmentList title="In progress" :status="filters.inProgress"></assignmentList>
+            <assignmentList title="Completed" :status="filters.completed"></assignmentList>
+
+            <form @submit.prevent="add">
+                <div class="border border-gray-600">
+                    <input type="text" placeholder="Add new assignment ...." class="text-black p-2"/>
+                    <button class="bg-white text-black p-2 border-l" type="submit">Add</button>
+                </div>
+            </form>
+
+        </section>
     `,
 
     data() {
@@ -24,6 +34,12 @@ export default {
                 completed : this.assignments.filter(a=>a.complete), 
             }
             
+        }
+    },
+
+    methods: {
+        add(e) {
+            alert("test");
         }
     }
 }
