@@ -13,10 +13,10 @@ export default {
     data() {
         return {
             assignments : [
-                {id:1, name: 'task1', complete: false},
-                {id:2, name: 'task2', complete: false},
-                {id:3, name: 'task3', complete: false},
-                {id:4, name: 'task4', complete: false},
+                {id:1, name: 'task1', complete: false, tag: 'math'},
+                {id:2, name: 'task2', complete: false, tag: 'math'},
+                {id:3, name: 'task3', complete: false, tag: 'IT'},
+                {id:4, name: 'task4', complete: false, tag: 'science'},
             ],
 
         }
